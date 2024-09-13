@@ -1,0 +1,296 @@
+ /* Modern color palette */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --accent-color: #e74c3c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 20px 40px;
+}
+
+nav h1 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+/* Navigation link hover animation */
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.social-links a {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+
+main {
+    margin-top: 60px; /* To account for fixed header */
+}
+
+#home {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+#home video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    background-color: rgba(0,0,0,0.5);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+#portfolio {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+}
+
+#portfolio h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.project-carousel {
+    display: flex;
+    overflow-x: auto;
+    justify-content: space-evenly;
+}
+
+.project-card {
+    flex: 0 0 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    scroll-snap-align: start;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05); 
+}
+
+.project-txt {
+    padding: 20px;
+}
+
+.project-txt h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-txt p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+#contact {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 30px 0px;
+}
+
+.contact-info h2, .contact-form h2 {
+    margin-bottom: 1rem;
+}
+
+.contact-info ul {
+    list-style: none;
+    line-height: 2.0;
+}
+
+.contact-form input, .contact-form button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: var(--secondary-color);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #27ae60;
+}
+
+/* Add these animations to your existing CSS */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Hero content animation */
+.hero-content {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Project card animation */
+.project-card {
+    animation: slideIn 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.project-card:nth-child(1) { 
+    animation-delay: 0.1s; 
+}
+
+.project-card:nth-child(2) { 
+    animation-delay: 0.2s; 
+}
+
+.project-card:nth-child(3) { 
+    animation-delay: 0.3s; 
+}
+
+/* Contact form button animation */
+.contact-form button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    animation: pulse 0.5s infinite;
+}
+
+/* Social links animation */
+.social-links a {
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+footer {
+    padding: 1rem;
+    background-color: #333;
+}
+
+footer p {
+    color: #fff;
+    text-align: center;
+}

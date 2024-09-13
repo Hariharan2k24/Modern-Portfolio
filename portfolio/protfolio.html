@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariharan - Front-end Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <link rel="stylesheet" href="protfolio.css">
+    <link rel="stylesheet" href="protfolio.js">
+</head>
+<body>
+    <nav>
+        <h1>Hariharan.</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+
+    <section id="home">
+        <video src="21368-317182818_medium.mp4" autoplay loop muted></video>
+        <div class="hero-content">
+            <h2>Hey there,</h2>
+            <h1>I'm Hariharan</h1>
+            <h3>Front-end Developer</h3>
+            <p>Freelance web developer and designer passionate about creating amazing digital experiences.</p>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="portfolio-title">
+            <h2>Services & Projects</h2>
+        </div>
+        <div class="project-carousel">
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="bw6.jpg" alt="">
+                </div>
+                <div class="project-txt">
+                    <h3>PAYZ</h3>
+                    <p>Payz is a popular digital payment and financial services platform in India. It allows users to make instant money transfers, pay bills, recharge mobile phones, and make payments for various services using their smartphones.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="bm5.jpg" alt="Project 1">
+                </div>
+                <div class="project-txt">
+                    <h3>ZOOPY</h3>
+                    <p>Zoopy is India's largest online grocery and food products delivery service. It offers a wide range of products including fresh produce, pantry staples, household items, and personal care products.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="bw5.jpg" alt="Project 1">
+                </div>
+                <div class="project-txt">
+                    <h3>DRU ERP</h3>
+                    <p>An Enterprise Resource Planning (ERP) system is a comprehensive software solution that integrates various business processes and functions across an organization. It aims to streamline operations and improve efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Add more project cards as needed -->
+
+    <section id="contact">
+        <div class="contact-info">
+            <h2>My Info</h2>
+            <ul>
+                <li>Name: Hariharan</li>
+                <li>Phone: +91 9439499490</li>
+                <li>Email: hari2322@gmail.com</li>
+                <li>Website: www.no_worry.com</li>
+                <li>Address: Madurai, Tamil Nadu</li>
+            </ul>
+        </div>
+        <form class="contact-form">
+            <h2>Get in Touch</h2>
+            <input type="text" placeholder="Name" required>
+            <input type="tel" placeholder="Phone Number">
+            <input type="email" placeholder="Email" required>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hariharan. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Animate hero content
+        gsap.from(".hero-content > *", {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.2,
+            ease: "power3.out"
+        });
+
+        // Animate project cards on scroll
+        gsap.from(".project-card", {
+            opacity: 0,
+            x: 50,
+            duration: 0.8,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: "#portfolio",
+                start: "top 80%",
+            }
+        });
+
+        // Animate contact form on scroll
+        gsap.from("#contact > *", {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: "#contact",
+                start: "top 80%",
+            }
+        });
+    </script>
+</body>
+</html>
